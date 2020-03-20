@@ -1,7 +1,7 @@
-package com.vytrack.step_definitions;
+package com.cvs.step_definitions;
 
-import com.vytrack.utilities.ConfigurationReader;
-import com.vytrack.utilities.Driver;
+import com.cvs.utilities.ConfigurationReader;
+import com.cvs.utilities.Driver;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -34,7 +34,7 @@ public class Hook {
             logger.info("Test completed!");
         }
         logger.info("##############################");
-        //after every test, we gonna close browser
+        //after every test, we will close browser
         Driver.close();
     }
 }

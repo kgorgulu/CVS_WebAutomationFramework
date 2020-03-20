@@ -1,4 +1,4 @@
-package com.vytrack.runners;
+package com.cvs.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "@target/rerun.txt",
-        glue = "com/vytrack/step_definitions",
+        glue = "com/cvs/step_definitions",
         plugin = {
                 "html:target/rerun-default-cucumber-reports",
         }

@@ -1,4 +1,4 @@
-package com.vytrack.utilities;
+package com.cvs.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.Properties;
 //ConfigurationReader.getProperty("browser")
 public class ConfigurationReader {
     //this class will be responsible for loading properties file and will provide access
-    //to values based on key names
+
     //we use Properties class to load custom .properties files
     private static Properties configFile;
 

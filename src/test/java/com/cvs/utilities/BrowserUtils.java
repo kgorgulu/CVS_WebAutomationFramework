@@ -1,4 +1,4 @@
-package com.vytrack.utilities;
+package com.cvs.utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -16,8 +16,7 @@ import java.util.function.Function;
 public class BrowserUtils {
 
     //It will be used to pause our test execution
-    //just provide number of seconds as a parameter
-    public static void wait(int seconds) {
+        public static void wait(int seconds) {
         try {
             Thread.sleep(1000 * seconds);
         } catch (InterruptedException e) {
@@ -78,11 +77,11 @@ public class BrowserUtils {
      * @return
      */
     public static WebElement waitForClickablility(WebElement element, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.get(), timeout);
+        WebDriverWait wait = new WebDriverWait(com.cvs.utilities.Driver.get(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    //    PLEASE INSERT THIS METHOD INTO BROWSER UTILS
+
     /*
      * takes screenshot
      * whenever you call this method
@@ -96,7 +95,7 @@ public class BrowserUtils {
         SimpleDateFormat df = new SimpleDateFormat("-yyyy-MM-dd-HH-mm");
         String date = df.format(new Date());
         // TakesScreenshot ---> interface from selenium which takes screenshots
-        TakesScreenshot ts = (TakesScreenshot) Driver.get();
+        TakesScreenshot ts = (TakesScreenshot) com.cvs.utilities.Driver.get();
         File source = ts.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
         //where screenshot will be stored
@@ -118,7 +117,7 @@ public class BrowserUtils {
      * @param webElement of element
      */
     public static void clickWithWait(WebElement webElement) {
-        Wait wait = new FluentWait<>(Driver.get())
+        Wait wait = new FluentWait<>(com.cvs.utilities.Driver.get())
                 .withTimeout(Duration.ofSeconds(15))
                 .pollingEvery(Duration.ofMillis(800))
                 .ignoring(NoSuchElementException.class)
@@ -147,7 +146,7 @@ public class BrowserUtils {
     public static void waitForPageToLoad(long timeOutInSeconds) {
         ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
         try {
-            WebDriverWait wait = new WebDriverWait(Driver.get(), timeOutInSeconds);
+            WebDriverWait wait = new WebDriverWait(com.cvs.utilities.Driver.get(), timeOutInSeconds);
             wait.until(expectation);
         } catch (Throwable error) {
             error.printStackTrace();
@@ -160,7 +159,7 @@ public class BrowserUtils {
      * @param pageTitle
      */
     public static void waitForPageTitle(String pageTitle) {
-        WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
+        WebDriverWait wait = new WebDriverWait(com.cvs.utilities.Driver.get(), 10);
         wait.until(ExpectedConditions.titleIs(pageTitle));
     }
 

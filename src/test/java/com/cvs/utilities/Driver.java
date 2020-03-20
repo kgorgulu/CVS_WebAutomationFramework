@@ -1,8 +1,7 @@
-package com.vytrack.utilities;
+package com.cvs.utilities;
 
 import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
-import io.cucumber.java.hu.De;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Platform;
@@ -20,8 +19,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class Driver {
@@ -42,7 +39,7 @@ public class Driver {
             logger.info("TRYING TO CREATE DRIVER");
             // this line will tell which browser should open based on the value from properties file
             String browserParamFromEnv = System.getProperty("browser");
-            String browser = browserParamFromEnv == null ? ConfigurationReader.getProperty("browser") : browserParamFromEnv;
+            String browser = browserParamFromEnv == null ? com.cvs.utilities.ConfigurationReader.getProperty("browser") : browserParamFromEnv;
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();

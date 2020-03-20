@@ -1,4 +1,4 @@
-package com.vytrack.runners;
+package com.cvs.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "src/test/resources/features/activities",
                 "src/test/resources/features/fleet",
         },
-        glue = "com/vytrack/step_definitions",
+        glue = "com/cvs/step_definitions",
         dryRun = false,
         plugin = {"html:target/default-cucumber-reports",
                 "json:target/cucumber.json",
